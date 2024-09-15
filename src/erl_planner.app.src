@@ -1,0 +1,20 @@
+{application, erl_planner,
+  [{description, "An OTP application"},
+    {vsn, "0.1.0"},
+    {registered, []},
+    {mod, {erl_planner_app, []}},
+    {applications,
+      [
+        kernel,
+        stdlib,
+        epgsql,
+        pooler,
+        jsx,
+        cowboy,
+        cowboy_swagger
+      ]},
+    {env,[]},
+    {modules, []},
+    {links, []},
+    {start_phases, [{start_http, []}]}
+  ]}.
