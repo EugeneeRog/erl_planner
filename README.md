@@ -4,7 +4,7 @@ Start app:
     OR 
     docker-compose down && docker-compose build --no-cache && docker-compose up
     (depends of docker installation)
- 2. Create postgre db with ./priv/db.sql and run `rebar3 shell`
+ 2. Create postgre db with ./priv/db.sql and change sys.config with you db connection values, than run 'rebar3 shell'
 
 Swagger doc: http://localhost:8080/api-docs/index.html#
 
