@@ -38,5 +38,4 @@ start_phase(start_http, _, []) ->
     },
 
   {ok, _} = cowboy:start_clear(start_http, #{socket_opts => [{port, Port}], num_acceptors => ListenerCount}, CowboyOptions),
-  erlang:display(ok),
   ok.

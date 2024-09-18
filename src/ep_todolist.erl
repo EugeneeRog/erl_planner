@@ -47,7 +47,6 @@ get(UserId) ->
   ep_db:select(Query, [UserId]).
 
 delete(ItemId) ->
-  erlang:display(ItemId),
   Query = "DELETE FROM public.plans WHERE id = $1",
   case ep_db:delete(Query, [ItemId]) of
     {ok, 1} -> true;

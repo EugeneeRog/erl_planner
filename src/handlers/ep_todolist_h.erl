@@ -45,7 +45,6 @@ trail(Endpoints, Module) when is_list(Endpoints) ->
 
 handle(#{method := Method} = Req, State) ->
   Response = handle(Method, Req, State),
-  erlang:display(Response),
   ep_http_utils:response(Response, Req, State).
 
 handle(<<"GET">>, Req, _State) ->
@@ -109,7 +108,7 @@ schema("/api/v1/plans") ->
         #{
           name => <<"id">>,
           in => <<"query">>,
-          description => <<"user id">>,
+          description => <<"plan id">>,
           required => true,
           example => 1
         }
@@ -158,12 +157,10 @@ schema("/api/v1/plans") ->
           <<"application/json">> => #{
             schema => #{
               type => object,
-              required => [
-                nickname
-              ],
+              required => [],
               properties =>  #{
-                id => #{type => integer, example => 16},
-                status => #{type => string, example => <<"complete">>}}
+                id => #{type => integer, required => true, example => 16},
+                status => #{type => string, required => true, example => <<"complete">>}}
             }
           }
         }

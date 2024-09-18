@@ -116,7 +116,7 @@ schema("/api/v1/users") ->
                 name
               ],
               properties =>  #{
-                user_name => #{type => binary, example => <<"create test task">>}
+                user_name => #{type => binary, example => <<"userName">>}
               }
             }
           }
